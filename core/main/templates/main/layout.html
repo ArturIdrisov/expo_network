@@ -1,0 +1,45 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="icon-bar">
+        <img src="{% static 'main/img/expo.png' %}" alt="Logo">
+        <span class="logo">ExpoNetwork</span>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="bi bi-house-door"></i>Main</li></a>
+            <a href="{% url 'about' %}"><li><i class="bi bi-file-earmark-person"></i>About us</li></a>
+            <a href="{% url 'news_home' %}"><li><i class="bi bi-newspaper"></i>News</li></a> 
+            <a href=""><li><i class="bi bi-person-lines-fill"></i>Contacts</li></a> 
+            <a href="{% url 'create' %}"><li><i class="fa fa-file-text-o"></i>Add an entry</li></a> 
+    <div class="icon-bar">
+        {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}"><li><i class="nav-item nav-link"></i>Профиль</li></a>
+            <a href="{% url 'logout' %}"><li><i class="nav-item nav-link"></i>Выход</li></a>
+        {% else %}
+            <a href="{% url 'login' %}"><li><i class="bi bi-box-arrow-in-right"></i>Вход</li></a>
+            <a href="{% url 'register' %}"><li><i class="bi bi-person-circle"></i>Регистрация</li></a>
+        {% endif %}
+    </div>
+        </ul>
+    </div>
+    <main> 
+        {% if messages %}
+        	{% for message in messages %}
+          	<div class="alert alert-{{ message.tags }}">
+            	{{ message }}
+          	</div>
+        	{% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

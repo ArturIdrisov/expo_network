@@ -1,0 +1,71 @@
+body {
+    background: white;
+}
+
+.icon-bar {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.icon-bar a {
+    float: left;
+    color: #0e0a0a;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.icon-bar img { 
+    width: 110px;
+    float: left;
+}
+
+div .logo {
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: 29px;
+}
+
+div ul {list-style: none} 
+div ul li {
+    color: #0e0a0a;
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s ease;
+}
+
+div ul li:hover, div ul a:hover {
+    color: rgb(90, 155, 185);
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main .features {
+    float:left;
+    color: #0e0a0a;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+
+main .features h1 {font-size:  50px;}
+main .features p {max-width: 400px; margin: 20px auto;}
+
+
+.alert-warning {
+    float: left;
+    clear: both;
+    width: 400px;
+    margin: 20px 34%;
+    text-align: center;
+}
+
+form {
+    margin-left: 32%;
+    width: 500px;
+    margin-top: 50px;
+}
+
